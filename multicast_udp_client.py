@@ -18,7 +18,7 @@ class HandleUDPClient(DatagramProtocol):
         print("Datagram %s received from %s" % (repr(datagram), repr(address)))
 
 def main():
-    reactor.listenMulticast(9999, HandleUDPClient(), listenMultiple=True)
+    reactor.listenMulticast(port, HandleUDPClient(), listenMultiple=True)
     reactor.run()
 
 if __name__ == '__main__':
